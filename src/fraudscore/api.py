@@ -1,6 +1,7 @@
 ﻿import threading
 
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, Field
 
 from .model import load_or_train, score
