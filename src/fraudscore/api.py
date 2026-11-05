@@ -31,6 +31,10 @@ def create_app(bundle=None):
         description="Scores mobile-money-style transactions for fraud risk. "
         "Trained on synthetic data, so it is a demo of the pipeline, not a real fraud model.",
     )
+    @app.get("/", include_in_schema=False)
+    def root():
+        return RedirectResponse(url="/docs")
+        
     app.state.bundle = bundle
     lock = threading.Lock()
 
